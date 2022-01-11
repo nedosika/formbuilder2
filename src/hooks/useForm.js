@@ -24,7 +24,12 @@ const useForm = (initialForm) => {
             />
         );
 
-    return {formFields}
+    const handleSubmit = (onSubmit) => (event) => {
+        event.preventDefault();
+        onSubmit({...state});
+    }
+
+    return {formFields, handleSubmit}
 }
 
 export default useForm;

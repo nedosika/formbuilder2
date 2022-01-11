@@ -11,8 +11,6 @@ const Field = (props) => {
         value
     } = props;
 
-
-
     return (
         <div>
             <label>{label}</label>

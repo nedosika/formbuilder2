@@ -4,7 +4,7 @@ import useForm from "./hooks/useForm";
 import Field from "./components/Field";
 
 function App() {
-    const {formFields} = useForm({
+    const {formFields, handleSubmit} = useForm({
         firstName: {
             type: 'input',
             value: '',
@@ -22,13 +22,11 @@ function App() {
         }
     });
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-    }
+    const onSubmit = (data) => console.log(data);
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 {formFields}
                 <input type="submit"/>
             </form>
